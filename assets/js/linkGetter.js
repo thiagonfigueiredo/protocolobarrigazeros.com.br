@@ -4,6 +4,7 @@ const campanha = document.getElementById("campanha");
 const conjunto = document.getElementById("conjunto");
 const anuncio = document.getElementById("anuncio");
 const criativo = document.getElementById("criativo");
+const publico = document.getElementById("publico");
 const url = document.getElementById("url");
 
 function copyToClipboard() {
@@ -25,6 +26,7 @@ const reset = () => {
   conjunto.value = "";
   anuncio.value = "";
   criativo.value = "";
+  publico.value = "";
   url.value = "";
 };
 
@@ -44,6 +46,9 @@ const handleGerarUrl = () => {
     if (anuncio.value.length > 0) {
       params += `|${anuncio.value}`;
     }
+  }
+  if (publico.value.length > 0) {
+    params += `&utm_term=${publico.value}`;
   }
   if (criativo.value.length > 0) {
     params += `&utm_content=${criativo.value}`;
