@@ -37,20 +37,20 @@ const handleGerarUrl = () => {
     }
   }
   if (campanha.value.length > 0) {
-    params += `&utm_campaign=campanha-${campanha.value}`;
+    params += `&utm_campaign=${campanha.value}`;
     if (conjunto.value.length > 0) {
-      params += `|conjunto-${conjunto.value}`;
+      params += `|${conjunto.value}`;
     }
     if (anuncio.value.length > 0) {
-      params += `|anuncio-${anuncio.value}`;
+      params += `|${anuncio.value}`;
     }
   }
   if (criativo.value.length > 0) {
-    params += `&utm_content=criativo-${criativo.value}`;
+    params += `&utm_content=${criativo.value}`;
   }
   url.setAttribute(
     "value",
-    `https://protocolobarrigazeros.com.br${params ? params : ""}`
+    `${window.location.origin}${params ? params : ""}`
   );
   copyToClipboard();
 };
