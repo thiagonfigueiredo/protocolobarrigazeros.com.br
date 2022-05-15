@@ -35,6 +35,20 @@
     line-height: 2.4rem;
 }
 
+.congrats-message-message {
+    padding-top: 10px;
+    color: #000;
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+
+}
+
+.congrats-message-cta {
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    color: #000;
+}
+
 .invert {
     background-color: green;
     color: #fff;
@@ -182,6 +196,44 @@
     color: #fff;
 }
 
+.down-unique {
+    background-color: #000;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.down-unique-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: green;
+}
+
+.down-message {
+    color: #000;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+}
+
+.top10 {
+    margin-top: 10px;
+}
+
+.whatyouget {
+    color: green;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    margin-bottom: 25px;
+}
+
+.atencao-final {
+    color: #000;
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+}
 
 @media screen and (max-width: 420px) {
   .feature-left .title {
