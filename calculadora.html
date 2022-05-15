@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora - EDC</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <!-- Social -->
+    <meta property="og:url" content="https://emagrecimentodescomplicadoceto.com/calculadora" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Calculadora - EDC" />
+    <meta property="og:description" content="Calculadora - Emagrecimento Descomplicado CETO" />
+    <!-- <meta property="og:image"
+        content="https://emagrecimentodescomplicadoceto.com/guia-completo-da-dieta-cetogenica/assets/images/image-meta.jpg" /> -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+    <!-- CSS Links -->
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="./assets/css/index.css" rel="stylesheet" />
+    <link href="./assets/css/sliding-form-style.css" rel="stylesheet" />
+    <link href="./assets/css/quiz.css" rel="stylesheet" />
+    <link href="./assets/css/obter-dieta.css" rel="stylesheet" />
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="./assets/js/reload_js.js"></script>
+    <script src="./assets/js/promo.js"></script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-KLN6XMW");
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLN6XMW" height="0" width="0"
+            style="display: none; visibility: hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="wrapper">
+        <div class="logo-container">
+        </div>
+        <div class="clearfix"></div>
+        <div id="root"></div>
+        <script type="text/babel" src="./assets/js/quiz.js"></script>
+        <div class="container-fluid">
+            <div class="mobile-full-scrn">
+                <div class="text-center mt-5">
+                    <div class="summary-blocks">
+                        <div id="block-calories" class="summary-block text-left">
+                            <div id="info-calories" class="summary-info">
+                                <a href="javascript:void(0);"></a>
+                            </div>
+                            <div class="info">
+                                <div class="summary-header">
+                                    <h2>Calorias Diárias</h2>
+                                </div>
+                                <div class="summary-diagramm text-center">
+                                    <div class="blue-round-diagram round-diagram">
+                                        <div class="blue-gradient-text bottom-centered">
+                                            <span id="daily-calories"></span>
+                                            <p>Calorias</p>
+                                        </div>
+                                    </div>
+                                    <div class="diagram-range">
+                                        <span class="left gray">0 Calorias</span>
+                                        <span class="right gray">5000 Calorias</span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="summary-summary text-center">
+                                    Calorias recomendadas:
+                                    <p class="blue-gradient-text"><span id="daily-calories2"></span></p>
+                                </div>
+                            </div>
+                            <div class="help">
+                                Suas calorias diárias foram calculadas com base em sua altura,
+                                peso, idade e níveis de atividade diária. Seu guia completo da
+                                dieta cetogênica conta com refeições cetônicas otimizadas para
+                                que você possa perder peso com segurança e eficiência com base
+                                em seus objetivos pessoais.
+                            </div>
+                        </div>
+                        <div id="block-fats" class="summary-block text-left">
+                            <div id="info-fats" class="summary-info">
+                                <a href="javascript:void(0);"></a>
+                            </div>
+                            <div class="info">
+                                <div class="summary-header">
+                                    <h2>Gorduras Diárias</h2>
+                                </div>
+                                <div class="summary-diagramm text-center">
+                                    <div class="violet-round-diagram round-diagram">
+                                        <div class="violet-gradient-text bottom-centered">
+                                            <span id="daily-fats"></span>
+                                            <p>Gorduras</p>
+                                        </div>
+                                    </div>
+                                    <div class="diagram-range">
+                                        <span class="left gray">0g Gorduras</span>
+                                        <span class="right gray">300g Gorduras</span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="summary-summary text-center">
+                                    Gorduras Recomendadas:
+                                    <p class="violet-gradient-text"><span id="daily-fats2"></span></p>
+                                </div>
+                            </div>
+                            <div class="help">
+                                Com uma dieta cetogênica, as gorduras são mantidas ALTAS. Ao manter as gorduras altas e
+                                os carboidratos baixos, forçamos seu corpo a começar a usar GORDURA como combustível. A
+                                gordura se torna a nova fonte de energia do seu corpo e você se torna muito mais
+                                eficiente em queimá-la, perdendo peso mais rápido e mais fácil do que uma dieta regular.
+                            </div>
+                        </div>
+                        <div class="clear hidden-xs"></div>
+                        <div id="block-protein" class="summary-block text-left">
+                            <div id="info-protein" class="summary-info">
+                                <a href="javascript:void(0);"></a>
+                            </div>
+                            <div class="info">
+                                <div class="summary-header">
+                                    <h2>Proteína Diária</h2>
+                                </div>
+                                <div class="summary-diagramm text-center">
+                                    <div class="green-round-diagram round-diagram">
+                                        <div class="green-gradient-text bottom-centered">
+                                            <span id="daily-protein"></span>
+                                            <p>Proteína</p>
+                                        </div>
+                                    </div>
+                                    <div class="diagram-range">
+                                        <span class="left gray">0g Proteína</span>
+                                        <span class="right gray">400g Proteína</span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="summary-summary text-center">
+                                    Proteína recomendada:
+                                    <p class="green-gradient-text"><span id="daily-protein2"></span></p>
+                                </div>
+                            </div>
+                            <div class="help">
+                                A proteína é mantida em 20-25% do seu subsídio calórico diário. A proteína ajuda a
+                                preservar e construir músculos e é essencial ao fazer dieta para garantir que sua
+                                composição corporal permaneça em níveis ideais para ter uma boa aparência e se sentir
+                                saudável.
+                            </div>
+                        </div>
+                        <div id="block-carbs" class="summary-block text-left">
+                            <div id="info-carbs" class="summary-info">
+                                <a href="javascript:void(0);"></a>
+                            </div>
+                            <div class="info">
+                                <div class="summary-header">
+                                    <h2>
+                                        Carboidratos Diários</h2>
+                                </div>
+                                <div class="summary-diagramm text-center">
+                                    <div class="yellow-round-diagram round-diagram">
+                                        <div class="yellow-gradient-text bottom-centered">
+                                            <span id="daily-carbs"></span>
+                                            <p>Carboidratos</p>
+                                        </div>
+                                    </div>
+                                    <div class="diagram-range">
+                                        <span class="left gray">0g Carboidratos</span>
+                                        <span class="right gray">60g Carboidratos</span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="summary-summary text-center">
+                                    Carboidratos recomendados:
+                                    <p class="yellow-gradient-text"><span id="daily-carbs2"></span></p>
+                                </div>
+                            </div>
+                            <div class="help">
+                                Os carboidratos devem ser mantidos em 5% ou menos de sua ingestão diária de calorias,
+                                para que você permaneça em cetose para a queima máxima de gordura.
+                            </div>
+                        </div>
+                        <div class="clear hidden-xs"></div>
+                        <div id="block-water" class="summary-block text-left">
+                            <div id="info-water" class="summary-info">
+                                <a href="javascript:void(0);"></a>
+                            </div>
+                            <div class="info">
+                                <div class="summary-header">
+                                    <h2>
+                                        Ingestão Diária de Água</h2>
+                                </div>
+                                <div class="summary-diagramm text-center">
+                                    <div class="water-diagram round-diagram">
+                                        <div class="water-centered"><span id="daily-water-intake"></span></div>
+                                    </div>
+                                    <div class="diagram-range"></div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="summary-summary text-center">
+                                    Água Recomendada:
+                                    <p class="red-gradient-text"><span id="daily-water-intake2"></span></p>
+                                </div>
+                            </div>
+                            <div class="help">
+                                Beber bastante água pode ajudar a manter sua pele saudável, aumentar seu metabolismo e
+                                garantir que seu sistema digestivo esteja funcionando corretamente. É importante que
+                                você beba a quantidade correta em uma dieta cetogênica e é por isso que lhe damos uma
+                                quantidade recomendada. Beber quantidades excessivas de água pode causar um
+                                desequilíbrio eletrolítico, o que faz com que você se sinta cansado, fraco e tonto e
+                                beber muito pouco pode causar desidratação.
+                            </div>
+                        </div>
+                        <div id="block-bmi" class="summary-block text-left">
+                            <div id="info-bmi" class="summary-info">
+                                <a href="javascript:void(0);"></a>
+                            </div>
+                            <div class="info">
+                                <div class="summary-header">
+                                    <h2>Seu IMC</h2>
+                                </div>
+                                <div class="summary-diagramm text-center">
+                                    <div class="bmi-diagram round-diagram">
+                                        <div class="blue-gradient-text bmi-centered"><span id="bmi"></div>
+                                    </div>
+
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="summary-summary text-center">
+                                    Seu IMC:
+                                    <p class="blue-gradient-text"><span id="bmi2"></p>
+                                </div>
+                            </div>
+                            <div class="help">
+                                O índice de massa corporal (IMC) é uma medida que usa sua altura e peso para descobrir
+                                se seu peso é saudável. A menos que você seja extraordinariamente musculoso, o IMC
+                                geralmente se correlaciona com a gordura corporal total. Isso significa que, à medida
+                                que a pontuação do IMC aumenta, o mesmo acontece com a gordura corporal total de uma
+                                pessoa.
+                            </div>
+                        </div>
+                        <div class="clear hidden-xs"></div>
+                        <div id="block-activity" class="summary-block text-left">
+                            <div id="info-activity" class="summary-info">
+                                <a href="javascript:void(0);"></a>
+                            </div>
+                            <div class="info">
+                                <div class="summary-header">
+                                    <h2>Nível de atividade diária</h2>
+                                </div>
+                                <div class="summary-diagramm text-center">
+                                    <div class="heart-diagram round-diagram">
+                                        <div class="water-centered"></div>
+                                    </div>
+                                    <div class="diagram-range"></div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="summary-summary text-center">
+                                    Seu nível de atividade diária:
+                                    <p class="pink-gradient-text"><span id="activityLevel"></p>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="help">
+                                Esta é a quantidade de atividade física que você nos disse que faz atualmente a cada
+                                dia. Isso nos ajuda a calcular suas calorias diárias totais, pois quanto mais atividade
+                                diária você faz, mais você pode comer e vice-versa.
+                            </div>
+                        </div>
+                        <div id="block-achievable" class="summary-block text-left">
+                            <div id="info-achievable" class="summary-info">
+                                <a href="javascript:void(0);"></a>
+                            </div>
+                            <div class="info">
+                                <div class="summary-header">
+                                    <h2>
+                                        Peso alcançável em 30 dias</h2>
+                                </div>
+                                <div class="summary-diagramm text-center">
+                                    <div class="scale-diagram round-diagram">
+                                        <div class="blue-gradient-text bmi-centered"></div>
+                                    </div>
+
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="summary-summary text-center">
+                                    Peso alcançável:
+                                    <p class="lgrn-gradient-text"><span id="achievableWeight"></span></p>
+                                </div>
+                            </div>
+                            <div class="help">
+                                Seu peso estimado após 30 dias seguindo seu guia completo da dieta cetogênica. Os
+                                resultados podem variar.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer text-center">
+            <div class="container">
+                <hr />
+                <p>
+                    &copy;
+                    <script type="text/javascript" src="./assets/js/getFullYear.js"></script>
+                    Emagrecimento Descomplicado CETO - Todos direitos reservados.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./assets/js/calculadora.js"></script>
+</body>
+
+</html>
