@@ -91,6 +91,10 @@
                         <div class="right-body">
                             <div class="linha">
                                 <img class="vzin" src="../assets/images/vzin.png" />
+                                <span class="description">90 receitas</span>
+                            </div>
+                            <div class="linha">
+                                <img class="vzin" src="../assets/images/vzin.png" />
                                 <span class="description">Café da manhã</span>
                             </div>
                             <div class="linha">
@@ -101,7 +105,7 @@
                                 <img class="vzin" src="../assets/images/vzin.png" />
                                 <span class="description">Lanches</span>
                             </div>
-                            <div class="linha">
+                            <div class="linha off">
                                 <img class="vzin" src="../assets/images/vzin.png" />
                                 <span class="description">Sobremesas</span>
                             </div>
@@ -152,8 +156,23 @@
                         </div>
                     </div>
 
+
                 </div>
 
+            </div>
+            <div class="cta">
+                <div style="text-align:center">
+                    <button id="kiwify-upsell-trigger-vuEgaNa"
+                        style="background-color:#8E43AD;padding:12px 16px;cursor:pointer;color:#FFFFFF;font-weight:600;border-radius:4px;border:1px solid #8E43AD;font-size:20px;">Sim,
+                        quero adicionar ao meu pacote!</button>
+                    <div id="kiwify-upsell-cancel-trigger"
+                        style="margin-top:1rem;cursor:pointer;font-size:16px;text-decoration:underline;font-family:sans-serif;">
+                        Não, não quero adicionar ao meu pacote</div>
+                </div>
+                <script>
+                    let nextUpsellURL = "";
+                    let nextDownsellURL = "";</script>
+                <script src="https://kiwify-snippets.netlify.app/upsell/upsell.min.js"></script>
             </div>
         </div>
     </header>

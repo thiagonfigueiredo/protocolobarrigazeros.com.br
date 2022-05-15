@@ -109,6 +109,10 @@
   padding-bottom: 15px;
 }
 
+.off {
+    border-bottom: 0px;
+}
+
 .old-price {
   color: red;
   text-decoration: line-through;
@@ -132,6 +136,10 @@
 .vzin {
   height: 25px;
   width: 25px;
+}
+
+.cta {
+    margin-top: 30px;
 }
 
 @media screen and (max-width: 420px) {
