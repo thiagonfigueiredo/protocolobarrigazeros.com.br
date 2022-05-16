@@ -10,8 +10,6 @@ String.prototype.replaceAt = function(index, replacement) {
 
 const params = window.location.search;
 
-console.log(params.replaceAt(0, '&'))
-
 if (params) {
 // if (src) {
   if (document.getElementById("cta-button-1")) {
