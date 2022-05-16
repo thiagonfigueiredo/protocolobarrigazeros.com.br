@@ -6,19 +6,23 @@
 
 const params = window.location.search;
 
+String.prototype.replaceAt = function(index, replacement) {
+  return this.substring(0, index) + replacement + this.substring(index + replacement.length);
+}
+
 if (params) {
 // if (src) {
   if (document.getElementById("cta-button-1")) {
     document
       .getElementById("cta-button-1")
-      .setAttribute("href", `https://pay.kiwify.com.br/MYLtYJJ${params}`);
+      .setAttribute("href", `https://pay.hotmart.com/J70689920Y?checkoutMode=10&bid=1652713075701${params.replaceAt(0, "&")}`);
     //   .setAttribute("href", `https://pay.kiwify.com.br/MYLtYJJ?src=${src}`);
   }
 
   if (document.getElementById("cta-button-2")) {
     document
       .getElementById("cta-button-2")
-      .setAttribute("href", `https://pay.kiwify.com.br/MYLtYJJ${params}`);
+      .setAttribute("href", `https://pay.hotmart.com/J70689920Y?checkoutMode=10&bid=1652713075701${params.replaceAt(0, "&")}`);
     //   .setAttribute("href", `https://pay.kiwify.com.br/MYLtYJJ?src=${src}`);
   }
 }
