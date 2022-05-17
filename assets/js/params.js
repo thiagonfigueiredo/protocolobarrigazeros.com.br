@@ -15,16 +15,16 @@ if (params) {
   if (document.getElementById("cta-button-1")) {
     document
       .getElementById("cta-button-1")
-      .setAttribute("href", `https://pay.hotmart.com/J70689920Y?checkoutMode=10&bid=1652713075701&src=${params.split("&")[1].split("=")[1] + "+" + params.split("&")[2].split("=")[1] + "+" + params.split("&")[3].split("=")[1]}`);
+      // .setAttribute("href", `https://pay.hotmart.com/J70689920Y?checkoutMode=10&bid=1652713075701&src=${params.split("&")[1].split("=")[1] + "+" + params.split("&")[2].split("=")[1] + "+" + params.split("&")[3].split("=")[1]}`);
       // .setAttribute("href", `https://pay.hotmart.com/J70689920Y?checkoutMode=10&bid=1652713075701${params.replaceAt(0, "&")}`);
-    //   .setAttribute("href", `https://pay.kiwify.com.br/MYLtYJJ?src=${src}`);
+      .setAttribute("href", `https://pay.kiwify.com.br/MYLtYJJ?src=${params}`);
   }
 
   if (document.getElementById("cta-button-2")) {
     document
       .getElementById("cta-button-2")
-      .setAttribute("href", `https://pay.hotmart.com/J70689920Y?checkoutMode=10&bid=1652713075701&src=${params.split("&")[1].split("=")[1] + "+" + params.split("&")[2].split("=")[1] + "+" + params.split("&")[3].split("=")[1]}`);
+      // .setAttribute("href", `https://pay.hotmart.com/J70689920Y?checkoutMode=10&bid=1652713075701&src=${params.split("&")[1].split("=")[1] + "+" + params.split("&")[2].split("=")[1] + "+" + params.split("&")[3].split("=")[1]}`);
       // .setAttribute("href", `https://pay.hotmart.com/J70689920Y?checkoutMode=10&bid=1652713075701${params.replaceAt(0, "&")}`);
-    //   .setAttribute("href", `https://pay.kiwify.com.br/MYLtYJJ?src=${src}`);
+      .setAttribute("href", `https://pay.kiwify.com.br/MYLtYJJ?src=${params}`);
   }
 }
