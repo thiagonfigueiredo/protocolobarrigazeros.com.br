@@ -33,18 +33,15 @@
         }
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-222251531-1"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-222251531-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
 
-      gtag("config", "UA-222251531-1");
+        gtag("config", "UA-222251531-1");
     </script>
     <!-- Google Tag Manager -->
     <script>
@@ -188,21 +185,31 @@
             </div>
             <div class="cta">
                 <div style="text-align:center">
-                    <button id="kiwify-upsell-trigger-vuEgaNa"
+                    <button data-braip-one-click="true" data-braip-upsell="ups56jgl" data-braip-split="1"
                         style="background-color:#8E43AD;padding:12px 16px;cursor:pointer;color:#FFFFFF;font-weight:600;border-radius:4px;border:1px solid #8E43AD;font-size:20px;">SIM,
                         QUERO ADICIONAR AO MEU PACOTE!</button>
-                    <div id="kiwify-upsell-cancel-trigger"
+                    <div onclick="goToDownSell()"
                         style="margin-top:1rem;cursor:pointer;font-size:16px;text-decoration:underline;font-family:sans-serif;">
                         Não, não quero adicionar ao meu pacote</div>
                 </div>
                 <script>
-                    let nextUpsellURL = "";
-                    let nextDownsellURL = "https://protocolobarrigazeros.com.br/ultima-chance/";</script>
-                <script src="https://kiwify-snippets.netlify.app/upsell/upsell.min.js"></script>
+                    let nextDownsellURL = "/ultima-chance/";
+                    const goToDownSell = () => {
+                        window.location.href = nextDownsellURL;
+                    };
+                </script>
+
             </div>
         </div>
     </header>
 
+    <script>
+        (function (w, d, s, t) {
+            if (w._brpUp) return; w._brpUp = t; var f = d.getElementsByTagName(s)[0], j = d.createElement(s);
+            j.async = true; j.src = "https://ev.braip.com/js/upsell.js?v=" + t;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', Date.now());
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
