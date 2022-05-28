@@ -185,20 +185,17 @@
             </div>
             <div class="cta">
                 <div style="text-align:center">
-                    <button data-braip-one-click="true" data-braip-upsell="ups56jgl" data-braip-split="1"
+                    <button id="kiwify-upsell-trigger-vuEgaNa"
                         style="background-color:#8E43AD;padding:12px 16px;cursor:pointer;color:#FFFFFF;font-weight:600;border-radius:4px;border:1px solid #8E43AD;font-size:20px;">SIM,
                         QUERO ADICIONAR AO MEU PACOTE!</button>
-                    <div onclick="goToDownSell()"
+                    <div id="kiwify-upsell-cancel-trigger"
                         style="margin-top:1rem;cursor:pointer;font-size:16px;text-decoration:underline;font-family:sans-serif;">
                         Não, não quero adicionar ao meu pacote</div>
                 </div>
                 <script>
-                    let nextDownsellURL = "/ultima-chance/";
-                    const goToDownSell = () => {
-                        window.location.href = nextDownsellURL;
-                    };
-                </script>
-
+                    let nextUpsellURL = "";
+                    let nextDownsellURL = "https://protocolobarrigazeros.com.br/ultima-chance/";</script>
+                <script src="https://kiwify-snippets.netlify.app/upsell/upsell.min.js"></script>
             </div>
         </div>
     </header>
