@@ -33,4 +33,13 @@ if (params) {
       .setAttribute("href", `https://pay.kiwify.com.br/MYLtYJJ${params}`);
     // .setAttribute("href", `https://ev.braip.com/checkout/pla2g26z/che5ezln${params}`);
   }
+
+  if (document.getElementById("cta-button-bonus")) {
+    document
+      .getElementById("cta-button-bonus")
+      // .setAttribute("href", `https://pay.hotmart.com/J70689920Y?checkoutMode=10&bid=1652713075701&src=${params.split("&")[1].split("=")[1] + "+" + params.split("&")[2].split("=")[1] + "+" + params.split("&")[3].split("=")[1]}`);
+      // .setAttribute("href", `https://pay.hotmart.com/J70689920Y?checkoutMode=10&bid=1652713075701${params.replaceAt(0, "&")}`);
+      .setAttribute("href", `https://pay.kiwify.com.br/MYLtYJJ${params}`);
+    // .setAttribute("href", `https://ev.braip.com/checkout/pla2g26z/che5ezln${params}`);
+  }
 }
