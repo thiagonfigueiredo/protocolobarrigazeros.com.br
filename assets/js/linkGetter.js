@@ -33,9 +33,9 @@ const reset = () => {
 const getInitialSlug = (initialSlug) => {
   switch (initialSlug) {
     case "quiz":
-      return "/quiz/";
+      return "/quiz";
     case "presell":
-      return "/ps/";
+      return "/ps";
     case "index":
       return "";
     default:
