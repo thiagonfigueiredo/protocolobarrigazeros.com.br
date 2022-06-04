@@ -6,7 +6,6 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <script src="./assets/js/params.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -22,8 +21,26 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script>
+      let initialSlug = "quiz";
+      const handleRadioButton = (slug) => initialSlug = slug;
+    </script>  
   </head>
   <body>
+    <fieldset>
+      <label class="container">
+        <input id="radio-index" type="radio" name="slug" value="index" onclick="handleRadioButton('index')">
+        <span class="checkmark">Index</span>
+      </label>
+      <label class="container">
+        <input id="radio-quiz" type="radio" name="slug" value="quiz" onclick="handleRadioButton('quiz')" checked>
+        <span class="checkmark" selected>Quiz</span>
+      </label>
+      <label class="container">
+        <input id="radio-presell" type="radio" name="slug" value="presell" onclick="handleRadioButton('presell')">
+        <span class="checkmark">Presell</span>
+      </label>
+    </fieldset>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Perfil</span>
@@ -143,7 +160,7 @@
         aria-describedby="basic-addon3"
       />
     </div>
-    <button type="button" class="btn btn-primary" onclick="handleGerarUrl()">
+    <button type="button" class="btn btn-primary" onclick="handleGerarUrl(initialSlug)">
       Gerar URL
     </button>
     <button type="button" class="btn btn-danger" onclick="reset()">

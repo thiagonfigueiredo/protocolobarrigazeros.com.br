@@ -30,7 +30,20 @@ const reset = () => {
   url.value = "";
 };
 
-const handleGerarUrl = () => {
+const getInitialSlug = (initialSlug) => {
+  switch (initialSlug) {
+    case "quiz":
+      return "/quiz/";
+    case "presell":
+      return "/ps/";
+    case "index":
+      return "";
+    default:
+      return "";
+  }
+};
+
+const handleGerarUrl = (initialSlug) => {
   let params = "?src=fb";
   if (perfil.value.length > 0) {
     params += `&utm_source=pf-${perfil.value}`;
@@ -55,7 +68,7 @@ const handleGerarUrl = () => {
   }
   url.setAttribute(
     "value",
-    `${window.location.origin}${params ? params : ""}`
+    `${window.location.origin + getInitialSlug(initialSlug)}${params ? params : ""}`
   );
   copyToClipboard();
 };
