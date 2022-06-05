@@ -3,6 +3,10 @@ const setUserCookie = (user) => {
     new Date().getTime() + 30 * 60 * 1000
   ).toGMTString()}; path=/`;
 };
+
+const isCalculadora =
+  window.location.pathname.split("/")[1].toLowerCase() === "calculadora";
+
 class Quiz extends React.Component {
   state = {
     stepsTotal: 2,
@@ -38,62 +42,60 @@ class Quiz extends React.Component {
       if (currentStep < stepsTotal) {
         this.setState({ currentStep: currentStep + 1 });
       } else {
-        let error = {};
-        if (age >= 14) {
-          delete error.age;
-        } else {
-          error = {
-            ...error,
-            age: "A idade precisa ser 14 anos ou superior",
-          };
-        }
-
-        if (height >= 130) {
-          delete error.height;
-        } else {
-          error = {
-            ...error,
-            height: "Insira um valor maior ou igual a 130",
-          };
-        }
-
-        if (weight >= 40) {
-          delete error.weight;
-        } else {
-          error = {
-            ...error,
-            weight: "Insira um valor maior ou igual a 40",
-          };
-        }
-
-        if (targetWeight >= 40) {
-          delete error.targetWeight;
-        } else {
-          error = {
-            ...error,
-            targetWeight: "Insira um valor maior ou igual a 40",
-          };
-        }
-        this.setState({ error });
-        if (Object.keys(error).length === 0) {
-          setUserCookie({
-            gender,
-            activityLevel,
-            age,
-            height,
-            weight,
-            targetWeight,
-          });
-
-          if (window.location.pathname.split("/")[1].toLowerCase() === "calculadora") {
-            document.querySelector(".container-fluid").classList.remove("hide");
-            reload_js("./assets/scripts/calculadora.js");
+        if (isCalculadora) {
+          let error = {};
+          if (age >= 14) {
+            delete error.age;
           } else {
-            const url = promo
-              ? `https://emagrecimentodescomplicadoceto.com?promo=${promo}`
-              : "https://emagrecimentodescomplicadoceto.com";
-            window.location.href = url;
+            error = {
+              ...error,
+              age: "A idade precisa ser 14 anos ou superior",
+            };
           }
+
+          if (height >= 130) {
+            delete error.height;
+          } else {
+            error = {
+              ...error,
+              height: "Insira um valor maior ou igual a 130",
+            };
+          }
+
+          if (weight >= 40) {
+            delete error.weight;
+          } else {
+            error = {
+              ...error,
+              weight: "Insira um valor maior ou igual a 40",
+            };
+          }
+
+          if (targetWeight >= 40) {
+            delete error.targetWeight;
+          } else {
+            error = {
+              ...error,
+              targetWeight: "Insira um valor maior ou igual a 40",
+            };
+          }
+          this.setState({ error });
+          if (Object.keys(error).length === 0) {
+            setUserCookie({
+              gender,
+              activityLevel,
+              age,
+              height,
+              weight,
+              targetWeight,
+            });
+          }
+
+          document.querySelector(".container-fluid").classList.remove("hide");
+          reload_js("./assets/scripts/calculadora.js");
+        } else {
+          const url = `https://https://protocolobarrigazeros.com.br${window.location.search}`;
+          window.location.href = url;
         }
       }
     };
@@ -109,7 +111,12 @@ class Quiz extends React.Component {
       return (
         <React.Fragment>
           <div className="quiz-title">
-            <h1>{window.location.pathname.split("/")[1].toLowerCase() === "calculadora" ? "CALCULADORA PZB" : "SELECIONE PARA CONTINUAR"}</h1>
+            <h1>
+              {window.location.pathname.split("/")[1].toLowerCase() ===
+              "calculadora"
+                ? "CALCULADORA EDC"
+                : "SELECIONE PARA CONTINUAR"}
+            </h1>
           </div>
           <div className="quiz-header">Para começar, escolha seu sexo.</div>
           <div className="gender-container">
@@ -178,7 +185,28 @@ class Quiz extends React.Component {
     };
 
     const thirdStep = () => {
-      const goNext = (activityLevel) => stepForward();
+      const goNext = () => stepForward();
+
+      if(!isCalculadora) {
+        return (
+          <React.Fragment>
+            <div className="quiz-title">
+              <h1>Parabéns por chegar até aqui</h1>
+            </div>
+            <div className="quiz-header">Baseado nas suas respostas você está qualificada!</div>
+            <div className="text-center">
+              <div
+                class="positive-gradient btn positive-button disabld"
+                id="positive-button"
+                onClick={goNext}
+              >
+                QUERO ASSISTIR O VÍDEO AGORA!
+              </div>
+            </div>
+          </React.Fragment>
+        );
+      }
+      
       return (
         <React.Fragment>
           <div className="quiz-title">
