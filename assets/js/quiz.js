@@ -94,7 +94,7 @@ class Quiz extends React.Component {
           document.querySelector(".container-fluid").classList.remove("hide");
           reload_js("./assets/scripts/calculadora.js");
         } else {
-          const url = `https://https://protocolobarrigazeros.com.br${window.location.search}`;
+          const url = `https://protocolobarrigazeros.com.br${window.location.search}`;
           window.location.href = url;
         }
       }
