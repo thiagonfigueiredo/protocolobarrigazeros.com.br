@@ -53,4 +53,3 @@ if (document.getElementById("cta-button-resultados")) {
     .setAttribute("href", `https://pay.kiwify.com.br/MYLtYJJ${params}`);
   // .setAttribute("href", `https://ev.braip.com/checkout/pla2g26z/che5ezln${params}`);
 }
-}
