@@ -99,9 +99,8 @@ section {
 h1 {
   text-align: center;
   text-transform: uppercase;
-  max-width: 80%;
   display: inline-block;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .video-container {
@@ -258,5 +257,13 @@ img {
   }
   h1 {
     font-size: 22px;
+  }
+
+  .resultado {
+    display: none;
+  }
+
+  .resultado-mobile {
+    display: block;
   }
 }
