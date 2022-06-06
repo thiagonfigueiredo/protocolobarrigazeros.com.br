@@ -173,7 +173,7 @@
                 Seu metabolismo <span class="red">desperta</span> de um sono
                 profundo!
               </h1>
-              <div class="cta-resultados column">
+              <div id="cta-resultados" class="cta-resultados column">
                 <div id="cta1" class="text-center d-none">
                   <a
                     id="cta-button-1"
@@ -758,6 +758,7 @@
     <script type="text/javascript">
       setTimeout(() => {
         document.getElementById("cta1").classList.remove("d-none");
+        document.getElementById("cta-resultados").style.display = "flex";
         document.getElementById("cta2").classList.remove("d-none");
         document.getElementById("cta-acesso").classList.remove("d-none");
         document.getElementById("cta-bonus").classList.remove("d-none");
